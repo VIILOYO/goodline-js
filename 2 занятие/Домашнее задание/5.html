@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 5</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        // Инициализация переменных
+        let numberOne;
+        let numberTwo;
+
+        // Присваивание значений
+        numberOne = 5;
+        numberTwo = 10;
+
+        // Вывод переменных
+        console.log(`Переменная numberOne = ${numberOne}\nПеременная numberTwo = ${numberTwo}`);
+
+        // Смена значений переменных через массивы
+        [numberOne, numberTwo] = [numberTwo, numberOne];
+        
+        console.log(`Переменная numberOne = ${numberOne}\nПеременная numberTwo = ${numberTwo}`);
+    </script>
+</body>
+</html>

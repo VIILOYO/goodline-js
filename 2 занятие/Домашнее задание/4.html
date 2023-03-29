@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 4</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        // Инициализация переменных
+        let candyPrice;
+        let cookiePrice;
+        let fullPrice;
+
+        // Ввод цены за килограмм
+        candyPrice = prompt('Сколько рублей стоит килограмм конфет?');
+        cookiePrice = prompt('Сколько рублей стоит килограмм печенья?');
+
+        // Вычисление цены покупки (а)
+        fullPrice = candyPrice * 0.3 + cookiePrice * 0.4;
+
+        // Вывод цены (а)
+        console.log('a)', fullPrice, 'руб.');
+
+        // Вычисление цены покупки (б)
+        fullPrice = (candyPrice * 2 + cookiePrice * 1.8) * 3;
+
+        // Вывод цены (б)
+        console.log('б)', fullPrice, 'руб.');
+    </script>
+</body>
+</html>

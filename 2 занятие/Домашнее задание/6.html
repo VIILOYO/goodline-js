@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 6</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        // Инициализация переменных
+        let deposit;
+        let procent;
+        let summ;
+
+        // Ввод значений
+        deposit = prompt('Введите сумму вклада');
+        procent = prompt('Введите годовой процент');
+
+        // Расчет суммы вклада через 5 лет
+        summ = deposit* (1 + procent/100)**5;
+
+        // Вывод результата
+        console.log(summ);
+    </script>
+</body>
+</html>
