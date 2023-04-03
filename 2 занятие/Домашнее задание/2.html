@@ -13,13 +13,15 @@
         let inches;
         let millimeters;
         let centimeters;
+        const MILLIMETERS = 25.4;
+        const CENTIMETERS = 2.54;
 
         // Ввод числа дюймов
         inches = prompt('Введите число в дюймах');
 
         // Перевод в миллиметры и сантиметры
-        millimeters = (inches * 25.4).toFixed(2); // без округления выводит много чисел после запятой
-        centimeters = (inches * 2.54).toFixed(2);
+        millimeters = (inches * MILLIMETERS).toFixed(2); // без округления выводит много чисел после запятой
+        centimeters = (inches * CENTIMETERS).toFixed(2);
 
         // Вывод результата
         console.log(`${inches} дюймов = ${millimeters} миллиметров или ${centimeters} сантиметров`)
