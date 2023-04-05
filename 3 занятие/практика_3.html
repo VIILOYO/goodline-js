@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let date =  new Date();
+        let day;
+        let month; 
+        let year;
+
+        day = prompt('Введите число');
+        month = +prompt('Введите месяц')-1;
+        year = prompt('Введите год');
+
+        date.setFullYear(year, month, day);
+
+        console.log(date);
+    </script>
+</body>
+</html>
