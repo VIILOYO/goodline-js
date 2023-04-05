@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1 dop</title>
+</head>
+<body>
+    <script>
+        'use strict'; // Строгий режим
+        // Инициализация переменных
+        let firstNumber;
+        let secondNumber;
+        let randomNumber;
+        let min;
+        let max;
+
+        // Ввод данных
+        firstNumber = prompt('Введите первое число');
+        secondNumber = prompt('Введите второе число');
+
+        // Получение максимального и минимального числа
+        min = Math.min(firstNumber, secondNumber);
+        max = Math.max(firstNumber, secondNumber);
+
+        // Генерация случайного числа
+        randomNumber = Math.random() * (max - min) + min;
+
+        // Вывод случайного числа
+        console.log(`Случайное число от ${min} до ${max} это ${randomNumber}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 4</title>
+</head>
+<body>
+    <script>
+        'use strict'; // Строгий режим
+        // Инициализация переменных
+        const MONTHS = 12;
+        let firstEmployee = {};
+        let secondEmployee = {};
+        let sumSalary;
+
+        // Ввод данных
+        firstEmployee.lastName = prompt('Введите фамилию первого сотрудника');
+        firstEmployee.salary = +prompt('Введите зарплату первого сотрудника');
+
+        secondEmployee.lastName = prompt('Введите фамилию второго сотрудника');
+        secondEmployee.salary = +prompt('Введите зарплату второго сотрудника');
+
+        // Расчет зарплаты за год и её вывод
+        firstEmployee.yearSalary = firstEmployee.salary * MONTHS;
+        console.log(`Годовая зарплата первого: ${firstEmployee.yearSalary}`);
+
+        secondEmployee.yearSalary = secondEmployee.salary * MONTHS;
+        console.log(`Годовая зарплата второго: ${secondEmployee.yearSalary}`);
+
+        // Вывод общей информации
+        sumSalary = firstEmployee.salary + secondEmployee.salary;
+        console.log(`Общая месячная зарплата ${sumSalary}`);
+        console.log(`Средняя месячная зарплата ${sumSalary/2}`);
+    </script>
+</body>
+</html>

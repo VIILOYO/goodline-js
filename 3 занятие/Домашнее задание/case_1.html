@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1</title>
+</head>
+<body>
+    <script>
+        'use strict'; // Включение строгого режима 
+
+        // Инициализация переменных
+        let firstNumber;
+        let secondNumber;
+
+        // Ввод значений
+        firstNumber = prompt('Введите первое число');
+        secondNumber = prompt('Введите второе число');
+
+        // Вывод типов данных
+        console.log(`firstNumber - ${typeof(firstNumber)}`);
+        console.log(`secondNumber - ${typeof(secondNumber)}`);
+
+        // Изменение типа данных
+        firstNumber = Number(firstNumber);
+        secondNumber = Number(secondNumber);
+
+        // Вывод типов данных
+        console.log(`firstNumber - ${typeof(firstNumber)}`);
+        console.log(`secondNumber - ${typeof(secondNumber)}`);
+
+        // Вывод результатов математических операций
+        console.log(`Сумма: ${firstNumber + secondNumber}`);
+        console.log(`Произведение: ${firstNumber * secondNumber}`);
+        console.log(`Разность: ${firstNumber - secondNumber}`);
+        console.log(`Частное: ${firstNumber/secondNumber}`);
+        console.log(`Остаток от деления: ${firstNumber%secondNumber}`);
+    </script>
+</body>
+</html>
