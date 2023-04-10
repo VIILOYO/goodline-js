@@ -15,6 +15,7 @@
         let firstEmployee = {};
         let secondEmployee = {};
         let sumSalary;
+        let sumYearSalary;
 
         // Ввод данных
         firstEmployee.lastName = prompt('Введите фамилию первого сотрудника');
@@ -29,6 +30,9 @@
 
         secondEmployee.yearSalary = secondEmployee.salary * MONTHS;
         console.log(`Годовая зарплата второго: ${secondEmployee.yearSalary}`);
+
+        sumYearSalary = firstEmployee.yearSalary + secondEmployee.yearSalary;
+        console.log(`Общая годовая зарплата: ${sumYearSalary}`);
 
         // Вывод общей информации
         sumSalary = firstEmployee.salary + secondEmployee.salary;
