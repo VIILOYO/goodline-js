@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика 1</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const a = +prompt('Введите сторону 1', 4);
+        const b = +prompt('Введите сторону 2', 6);
+        const c = +prompt('Введите сторону 3', 9);
+        let p;
+        let s;
+        let pp;
+
+        p = a + b + c;
+        pp = p/2;
+        s = Math.sqrt(pp * (pp - a) * (pp - b) * (pp - c));
+
+        console.log(`Периметр = ${p}`);
+        console.log(`Площадь = ${s}`);
+    </script>
+</body>
+</html>
