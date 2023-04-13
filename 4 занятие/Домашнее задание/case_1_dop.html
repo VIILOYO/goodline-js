@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1 dop</title>
+</head>
+<body>
+    <script>
+        'use strict'; // Строгий режим
+        // Ввод данных
+        const a = Number( prompt('Введите сторону основания призмы', 4) );
+        const h = Number( prompt('Введите высоту призмы', 10) );
+        const PI = Math.PI;
+        let prismVolume, cylinderVolume, shavings;
+
+        // Вычисления
+        prismVolume = a**2 * h;
+        cylinderVolume = PI * (a/2)**2 * h; 
+        shavings = prismVolume - cylinderVolume;
+
+        // Результат
+        console.log(`Объем стружки = ${shavings.toFixed(3)}`);
+    </script>
+</body>
+</html>

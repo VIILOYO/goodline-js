@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2 dop</title>
+</head>
+<body>
+    <script>
+        'use strict'; // Строгий режим
+        // Данные и переменные
+        const number = +prompt('Введите четырехзначное число', 5914);
+        let firstNumber;
+        let secondNumber;
+        let thirdNumber;
+        let fourthNumber;
+        let sum, result
+
+        // Получение всех 4 цифр числа
+        firstNumber = Math.floor(number/1000);
+        secondNumber = Math.floor(number/100) - firstNumber*10;
+        thirdNumber = Math.floor( (number%100)/10 );
+        fourthNumber = (number%10);
+
+        // Вычисления
+        sum = firstNumber + secondNumber + thirdNumber + fourthNumber;
+        result = firstNumber * secondNumber * thirdNumber * fourthNumber;
+
+        console.log(`Сумма цифр числа ${number} = ${sum}`);
+        console.log(`Произведение цифр числа ${number} = ${result}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 3</title>
+</head>
+<body>
+    <script>
+        'use strict'; // Строгий режим
+        // Ввод и инициализация переменных
+        const x = Number( prompt('Введите длину изображения', '1920') );
+        const y = Number( prompt('Введите высоту изображения', '1080') );
+        const conversionToBytes = 8;
+        const conversionToKbytes = 1024;
+        const pixelMemory = Math.log2(64); // Память для одного пикселя (Решил не писать просто 6)
+        let pixelsOfImage, memory;
+
+        // Расчет необходимой памяти
+        pixelsOfImage = x * y;
+        memory =  Math.ceil( pixelsOfImage * pixelMemory / conversionToBytes / conversionToKbytes );
+
+        // Вывод количества Кбайт
+        console.log(`Для хранения изображения ${x}x${y} пикселей нужно ${memory} Кбайт`);
+    </script>
+</body>
+</html>

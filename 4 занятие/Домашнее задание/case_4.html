@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 4</title>
+</head>
+<body>
+    <script>
+        'use strict'; // Строгий режим
+        // Комната
+        const width = Number( prompt('Введите ширину квадратной комнаты', '5') );
+        const height = Number( prompt('Введите высоту квадратной комнаты', '3') );
+        const walls = 4;
+
+        // Окна
+        const windowWidth =  Number( prompt(`Введите ширину окна (не больше ${width})`, '1.5') );
+        const windowHeight =  Number( prompt(`Введите высоту окна (не больше ${height})`, '2') );
+        const windowCount =  Number( prompt(`Введите количество окон`, '3') );
+
+        // Дверь
+        const doorWidth =  Number( prompt(`Введите ширину двери (не больше ${width})`, '1') );
+        const doorHeight =  Number( prompt(`Введите высоту двери (не больше ${height})`, '2') );
+
+        // Инициализация других переменных
+        let wallArea, wallpaperArea, doorArea, windowsArea;
+
+        // Вычисления
+        wallArea = (width * height) * walls;
+        doorArea = doorWidth * doorHeight;
+        windowsArea = (windowWidth * windowHeight) * windowCount;
+        wallpaperArea = wallArea - doorArea - windowsArea;
+
+        // Вывод площади
+        console.log(`Площадь стен для оклеивания их обоями = ${wallpaperArea}`);
+    </script>
+</body>
+</html>

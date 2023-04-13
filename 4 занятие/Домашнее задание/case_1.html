@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1</title>
+</head>
+<body>
+    <script>
+        'use strict'; // Строгий режим
+        // C - Общепринятый вариант записи длины окружности
+        const C = Number( prompt('Введите длину окружности', '10') );
+        const PI = Math.PI;
+        let R, S, a; // a - сторона квадрата
+        
+        // Вычисления
+        R = C / (2*PI); 
+        S = PI * R**2;
+        a = Math.sqrt(S);
+
+        // Вывод значений
+        console.log(`Радиус окружности = ${R.toFixed(3)}`);
+        console.log(`Площадь круга = ${S.toFixed(3)}`);
+        console.log(`Сторона квадрата = ${a.toFixed(3)}`);
+    </script>
+</body>
+</html>
