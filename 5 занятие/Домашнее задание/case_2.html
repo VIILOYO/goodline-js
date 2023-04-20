@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let result;
+        let numberOne = prompt('Введите число', '12');
+        if (numberOne === null) {
+            console.log('Вы отказались от ввода');
+        } else if (numberOne === '') {
+            console.log('Вы ничего не ввели');
+        } else if ( isNaN( Number(numberOne) ) ) {
+            console.log('Вы ввели не число');
+        } else {
+            let operation = prompt('Ведите арифметическую операцию', '/');
+            if (operation === null) {
+                console.log('Вы отказались от ввода');
+            } else if (operation === '') {
+                console.log('Вы ничего не ввели');
+            } else if (operation === '/' || operation === '*' || operation === '-' || operation === '+') {
+                let numberTwo = prompt('Введите число', '5');
+                if (numberTwo === null) {
+                    console.log('Вы отказались от ввода');
+                } else if (numberTwo === '') {
+                    console.log('Вы ничего не ввели');
+                } else if ( isNaN( Number(numberTwo) ) ) {
+                    console.log('Вы ввели не число');
+                } else if (operation === '/' && numberTwo == 0) {
+                    console.log('На 0 делить нельзя');
+                } else {
+                    numberOne = Number(numberOne);
+                    numberTwo = Number(numberTwo);
+
+                    if (operation === '/') {
+                        result = numberOne / numberTwo;
+                    } else if (operation === '*') {
+                        result = numberOne * numberTwo;
+                    } else if (operation === '+') {
+                        result = numberOne + numberTwo;
+                    } else {
+                        result = numberOne - numberTwo;
+                    }
+
+                    console.log(result);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

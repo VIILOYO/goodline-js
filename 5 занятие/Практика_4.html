@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика 4</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+
+        if (currentMonth >= 1 && currentMonth <= 3) {
+            console.log('Весна');
+        } else if (currentMonth >= 4 && currentMonth <= 6) {
+            console.log('Лето');
+        } else if (currentMonth >= 7 && currentMonth <= 9) {
+            console.log('Осень');
+        } else {
+            console.log('Зима');
+        }
+    </script>
+</body>
+</html>

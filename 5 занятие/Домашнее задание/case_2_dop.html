@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2 dop</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let year = prompt('Введи номер год', '2020');
+        let result;
+
+        if (year === null) {
+            console.log('Вы отказались вводить год');
+        } else if (year === '') {
+            console.log('Вы ничего не ввели');
+        } else if ( isNaN( Number(year) ) ) {
+            console.log('Вы ввели не число');
+        } else if (year > 3000 || year < 1000) {
+            console.log('Неподходящий год');
+        } else {
+            if (year%400 === 0) {
+                result = 'високостный';
+            } else if (year%100 === 0) {
+                result = 'не високостный';
+            } else if (year%4 === 0) {
+                result = 'високостный';
+            } else {
+                result = 'не високостный';
+            }
+
+            console.log(`Год ${year} ${result}`);
+        } 
+    </script>
+</body>
+</html>

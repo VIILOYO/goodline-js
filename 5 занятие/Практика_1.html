@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика 1</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const a = prompt('Введите первый коэфициент');
+        const b = prompt('Введите второй коэфициент');
+        const c = prompt('Введите третий коэфициент');
+        let x1, x2, D;
+
+        if ( a != Number(a) || b != Number(b) || c != Number(c)) {
+            console.log('Некорректный ввод');
+        } else {
+            D = b**2 - 4*a*c;
+    
+            if (D < 0) {
+                console.log('Корней нет');
+            } else if (D === 0) {
+                x1 = -b / (2*a);
+                console.log(`Корень уравнения ${x1}`);
+            } else if (D > 0) {
+                x1 = (-b + Math.sqrt(D) ) / (2*a);
+                x2 = (-b - Math.sqrt(D) ) / (2*a);
+                console.log(`Корни уравнения ${x1} и ${x2}`);
+            } else {
+                console.log('Что-то пошло не так');
+            }
+        };
+
+    </script>
+</body>
+</html>

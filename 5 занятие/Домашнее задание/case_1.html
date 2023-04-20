@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let month = prompt('Введи номер месяца', '2');
+
+        if (month === null) {
+            console.log('Вы отказались вводить месяц');
+        } else if (month === '') {
+            console.log('Вы ничего не ввели');
+        } else if ( isNaN( Number(month) ) ) {
+            console.log('Вы ввели не число');
+        } else if (month > 12 || month < 1) {
+            console.log('Месяца с таким значением не существует');
+        } else {
+            month = Number(month); // Перевод для сравнения в case
+            switch (month) {
+                case 1:
+                    console.log('Январь');
+                    break;
+                case 2:
+                    console.log('Февраль');
+                    break;
+                case 3:
+                    console.log('Март');
+                    break;
+                case 4:
+                    console.log('Апрель');
+                    break;
+                case 5:
+                    console.log('Май');
+                    break;
+                case 6:
+                    console.log('Июнь');
+                    break;
+                case 7:
+                    console.log('Июль');
+                    break;
+                case 8:
+                    console.log('Август');
+                    break;
+                case 9:
+                    console.log('Сентябрь');
+                    break;
+                case 10:
+                    console.log('Октябрь');
+                    break;
+                case 11:
+                    console.log('Ноябрь');
+                    break;
+                case 12:
+                    console.log('Декабрь');
+                    break;
+                default:
+                    console.log(123);
+            }
+        }
+    </script>
+</body>
+</html>

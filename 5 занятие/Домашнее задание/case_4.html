@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 4</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let y;
+        let x = prompt('Введи значение x', '2');
+
+        if (x === null) {
+            console.log('Вы отказались вводить x');
+        } else if (x === '') {
+            console.log('Вы ничего не ввели');
+        } else if ( isNaN( Number(x) ) ) {
+            console.log('Вы ввели не число');
+        } else {
+            x = Number(x);
+            if (x <= -1) {
+                y = -(x**2) - 4*x - 3;
+            } else if (x > -1 && x <= 1) {
+                y = x + 1;
+            } else {
+                y = 2/x;
+            }
+
+            console.log(`y = ${y}`);
+        }
+    </script>
+</body>
+</html>

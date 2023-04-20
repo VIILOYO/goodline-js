@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 3</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let polisFullCost;
+        let enginePowerFactor;
+        const polisBaseCost = prompt('Введите базовую стоимость полиса', '1000');
+
+        if (polisBaseCost === null) {
+            console.log('Вы отказались вводить стоимость');
+        } else if (polisBaseCost === '') {
+            console.log('Вы ничего не ввели');
+        } else if ( isNaN( Number(polisBaseCost) ) ) {
+            console.log('Вы ввели не число');
+        } else {
+            let enginePower = prompt('Введите коэффициент можности двигателя', '75');
+            if (enginePower === null) {
+                console.log('Вы отказались вводить коэффициент');
+            } else if (enginePower === '') {
+                console.log('Вы ничего не ввели');
+            } else if ( isNaN( Number(enginePower) ) ) {
+                console.log('Вы ввели не число');
+            } else {
+                if (enginePower <= 50) {
+                    enginePowerFactor = 0.6;
+                } else if (enginePower > 50 && enginePower <=70) {
+                    enginePowerFactor = 1;
+                } else if (enginePower > 70 && enginePower <= 100) {
+                    enginePowerFactor = 1.1;
+                } else if (enginePower > 100 && enginePower <= 120) {
+                    enginePowerFactor = 1.2;
+                } else if (enginePower > 120 && enginePower <= 150) {
+                    enginePowerFactor = 1.4;
+                } else if (enginePower > 150) {
+                    enginePowerFactor = 1.6;
+                }
+
+                polisFullCost = polisBaseCost * enginePowerFactor;
+                console.log(`Полная стоимость полиса = ${polisFullCost}`);
+            }
+        }
+    </script>
+</body>
+</html>
