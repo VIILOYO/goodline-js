@@ -23,7 +23,9 @@
                 console.log('Вы отказались от ввода');
             } else if (operation === '') {
                 console.log('Вы ничего не ввели');
-            } else if (operation === '/' || operation === '*' || operation === '-' || operation === '+') {
+            } else if (operation !== '/' && operation !== '*' && operation !== '-' && operation !== '+') {
+                console.log('Неверная операция');
+            } else {
                 let numberTwo = prompt('Введите число', '5');
                 if (numberTwo === null) {
                     console.log('Вы отказались от ввода');

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <div class="field">
+        <canvas id="canvas"></canvas>
+
+        <div class="tools">
+            <button onclick="undoLast()" type="button" class="button">Отмена</button>
+            <button onclick="clearCanvas()" type="button" class="button">Очистить</button>
+            <button onclick="changeFillable(this)" type="button" class="button" id="fill">Заливка</button>
+            
+            <div onclick="changeColor(this)" class="color-field" style="background: black;"></div>
+            <div onclick="changeColor(this)" class="color-field" style="background: red;"></div>
+            <div onclick="changeColor(this)" class="color-field" style="background: blue;"></div>
+            <div onclick="changeColor(this)" class="color-field" style="background: green;"></div>
+            <div onclick="changeColor(this)" class="color-field" style="background: yellow;"></div>
+
+            <input oninput="drawColor = this.value" type="color" class="color-picker">
+            <input oninput="drawWidth = this.value" type="range" min="1" max="50" value="2" class="pen-range">
+        </div>
+
+        <div class="figure">
+            <button onclick="setFigure(this)" type="button" class="button" id="dot">Точка</button>
+            <button onclick="setFigure(this)" type="button" class="button" id="line">Линия</button>
+            <button onclick="setFigure(this)" type="button" class="button" id="square">Квадрат</button>
+            <button onclick="setFigure(this)" type="button" class="button" id="circle">Круг</button>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body> 
+</html>
