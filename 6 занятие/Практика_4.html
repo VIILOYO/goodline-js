@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика 4</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let epsi;
+        while (true) {
+            epsi = Number(prompt('Введите значение эпсилон', '0.05'));
+            if (epsi > 0 && epsi < 1) break;
+            console.log('Неверный ввод!');
+        };
+
+        let sum = 0;
+        let result = 4/9;
+
+        for (let i = 1; result > epsi; i++) {
+            result = 4*i / (i**2 + 8*Math.sqrt(i));
+            sum += result;
+        };
+
+        console.log(`Результат: ${sum.toFixed(3)}`);
+    </script>
+</body>
+</html>

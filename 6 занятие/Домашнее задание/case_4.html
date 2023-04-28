@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 4</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const dateRegular = /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/;
+        let startDate, endDate, remainingDays;
+
+        while (true) {
+            if (typeof startDate === 'undefined') {
+                startDate = prompt('Введите дату 1 в формате день.месяц.год (Например: 01.01.2021)', '01.05.2019');
+            } else if (startDate === null) {
+                startDate = prompt('Вы отменили выбор! Введите дату 1 в формате день.месяц.год (Например: 01.01.2021)');
+            } else if (startDate.trim() === '') {
+                startDate = prompt('Вы ввели пустую строку! Введите дату 1 в формате день.месяц.год (Например: 01.01.2021)');
+            } else if (!startDate.match(dateRegular)) {
+                startDate = prompt('Неверный формат даты! Введите дату 1 в формате день.месяц.год (Например: 01.01.2021)');
+            } else {
+                startDate = new Date(startDate.slice(6), startDate.slice(3, 5)-1, startDate.slice(0, 2));
+                break;
+            };
+        };
+
+        while (true) {
+            if (typeof endDate === 'undefined') {
+                endDate = prompt('Введите дату 2 в формате день.месяц.год (Например: 01.01.2021)', '21.02.2021');
+            } else if (endDate === null) {
+                endDate = prompt('Вы отменили выбор! Введите дату 2 в формате день.месяц.год (Например: 01.01.2021)');
+            } else if (endDate.trim() === '') {
+                endDate = prompt('Вы ввели пустую строку! Введите дату 2 в формате день.месяц.год (Например: 01.01.2021)');
+            } else if (!endDate.match(dateRegular)) {   
+                endDate = prompt('Неверный формат даты! Введите дату 2 в формате день.месяц.год (Например: 01.01.2021)');
+            } else {
+                endDate = new Date(endDate.slice(6), endDate.slice(3, 5)-1, endDate.slice(0, 2));
+                if ( +endDate < +startDate) {
+                    endDate = prompt('Дата должна быть позде начальной!\n' +
+                                    'Введите дату 2 в формате день.месяц.год (Например: 01.01.2021)');
+                } else {
+                    remainingDays = Math.abs(endDate.getDate() - 13);
+                    endDate -= 86400000 * remainingDays;
+                    endDate = new Date(endDate);
+                    break;
+                };
+            };
+        };
+
+        do {
+            if (endDate.getDay() === 5) {
+                console.log(`${endDate.getMonth()+1}.${endDate.getFullYear()}`);
+            }
+
+            if (endDate.getMonth() > 0) {
+                endDate = new Date(endDate.getFullYear(), endDate.getMonth() - 1, endDate.getDate());
+            } else {
+                endDate = new Date(endDate.getFullYear() - 1, 11, endDate.getDate());
+            }
+        } while (+endDate >= +startDate);
+    </script>
+</body>
+</html>

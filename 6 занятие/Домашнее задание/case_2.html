@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        let a, b, h, x, y;
+        let resultX = 'x = ';
+        let resultY = 'y = ';
+
+        while (true) {
+            if (typeof a === 'undefined') {
+                a = prompt('Введите начало диапазона');
+            } else if (a === null) {
+                a = prompt('Вы отменили выбор! Введите начало диапазона');
+            } else if (a.trim() === '') {
+                a = prompt('Вы ввели пустую строку! Введите начало диапазона');
+            } else if ( isNaN(Number(a)) ) {
+                a = prompt('Вы ввели не число! Введите начало диапазона');
+            } else {
+                break;
+            };
+        };
+
+        while (true) {
+            if (typeof b === 'undefined') {
+                b = prompt('Введите конец диапазона');
+            } else if (b === null) {
+                b = prompt('Вы отменили выбор! Введите конец диапазона');
+            } else if (b.trim() === '') {
+                b = prompt('Вы ввели пустую строку! Введите конец диапазона');
+            } else if ( isNaN(Number(b)) ) {
+                b = prompt('Вы ввели не число! Введите конец диапазона');
+            } else if (Number(b) < Number(a)) {
+                b = prompt('Конец диапазона меньше начала! Введите конец диапазона');
+            } else {
+                break;
+            };
+        };
+
+        while (true) {
+            if (typeof h === 'undefined') {
+                h = prompt('Введите шаг');
+            } else if (h === null) {
+                h = prompt('Вы отменили выбор! Введите шаг');
+            } else if (h.trim() === '') {
+                h = prompt('Вы ввели пустую строку! Введите шаг');
+            } else if ( isNaN(Number(h)) ) {
+                h = prompt('Вы ввели не число! Введите шаг');
+            } else if ( Number(h) > Math.abs(Number(b) - Number(a)) ) {
+                h = prompt('Шаг слишком большой! Введите шаг поменьше');
+            } else if ( Number(h) <= 0){
+                h = prompt('Шаг слишком маленький! Введите шаг побольше');
+            }else {
+                break;
+            };
+        };
+
+        x = Number(a);
+        h = Number(h);
+        b = Number(b);
+        do {
+            if (x <= -1) {
+                y = -(x ** 2) - 4 * x - 3;
+            } else if (x > -1 && x <= 1) {
+                y = x + 1;
+            } else {
+                y = 2 / x;
+            }
+            resultX += `  ${x.toFixed(3)}`;
+            resultY += `  ${y.toFixed(3)}`;
+            x += h;
+        } while (x < b);
+        
+        console.log(resultX);
+        console.log(resultY);
+    </script>
+</body>
+
+</html>

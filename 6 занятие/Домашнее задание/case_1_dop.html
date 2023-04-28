@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1 dop</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        
+        let loop = true;
+
+        while (loop) {
+            let numberOne, numberTwo, operator;
+            // Первое число
+            while (loop) {
+                if (typeof numberOne === 'undefined') {
+                    numberOne = prompt('Введите первое число');
+                } else if (numberOne === null) {
+                    loop = false;
+                    break;
+                } else if ( isNaN(Number(numberOne)) ) {
+                    numberOne = prompt('Вы ввели не число! Введите первое число');
+                } else if (numberOne.trim() === '') {
+                    numberOne = prompt('Вы ввели пустую строку! Введите первое число');
+                } else {
+                    numberOne = Number(numberOne);
+                    break;
+                };
+            };
+            // Второе число
+            while (loop) {
+                if (typeof numberTwo === 'undefined') {
+                    numberTwo = prompt('Введите второе число');
+                } else if (numberTwo === null) {
+                    loop = false;
+                    break;
+                } else if ( isNaN(Number(numberTwo)) ) {
+                    numberTwo = prompt('Вы ввели не число! Введите второе число');
+                } else if (numberTwo.trim() === '') {
+                    numberTwo = prompt('Вы ввели пустую строку! Введите второе число');
+                } else {
+                    numberTwo = Number(numberTwo);
+                    break;
+                };
+            };
+            // Оператор
+            while (loop) {
+                if (typeof operator === 'undefined') {
+                    operator = prompt('Введите оператор');
+                } else if (operator === null) {
+                    loop = false;
+                    break;
+                } else if (operator.trim() === '') {
+                    numberTwo = prompt('Вы ввели пустую строку! Введите оператор');
+                } else if (operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/'){
+                    operator = prompt('Вы ввели неверный оператор! Введите оператор');
+                } else {
+                    switch (operator) {
+                        case '+':
+                            console.log(numberOne + numberTwo);
+                            break
+                        case '-':
+                            console.log(numberOne - numberTwo);
+                            break;
+                        case '*':
+                            console.log(numberOne * numberTwo);
+                            break;
+                        case '/':
+                            console.log(numberOne / numberTwo);
+                            break;
+                        default:
+                            console.log('Что-то пошло не так');
+                    };
+                    break;
+                };
+            };
+        };
+    </script>
+</body>
+</html>

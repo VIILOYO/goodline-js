@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 3 dop</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let a, n = 1, sum = 0;
+
+        while (true) {
+            if (typeof a === 'undefined') {
+                a = prompt('Введите положителньое число a');
+            } else if (a === null) {
+                a = prompt('Вы отменили выбор! Введите положителньое число a');
+            } else if ( isNaN(Number(a)) ) {
+                a = prompt('Вы ввели не число! Введите положителньое число a');
+            } else if (a.trim() === '') {
+                a = prompt('Вы ввели пустую строку! Введите положителньое число a');
+            } else if (a <= 0) {
+                a = prompt('Вы ввели неверное значение! Введите положителньое число a');
+            } else {
+                a = Number(a);
+                break;
+            };
+        };
+        
+        for (let i = 1; sum < a; i++, n += 2) {
+            sum += i/n;
+        };
+
+        console.log(`Минимальное значение n = ${n-2}`);
+    </script>
+</body>
+</html>

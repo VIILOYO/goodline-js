@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let a, n, result;
+        while (true) {
+            if (typeof a === 'undefined') {
+                a = prompt('Введите натуральное число a');
+            } else if (a === null) {
+                a = prompt('Вы отменили выбор! Введите натуральное число a');
+            } else if (a.trim() === '') {
+                a = prompt('Вы ввели пустую строку! Введите натуральное число a');
+            } else if ( isNaN(Number(a)) ) {
+                a = prompt('Вы ввели не число! Введите натуральное число a');
+            } else if (!Number.isInteger( Number(a) )) {
+                a = prompt('Вы ввели не целое число! Введите натуральное число a');
+            } else if (Number(a) <= 0) {
+                a = prompt('Вы ввели не натуральное число! Введите натуральное число a');
+            } else {
+                result = a;
+                break;
+            };
+        };
+
+        while (true) {
+            if (typeof n === 'undefined') {
+                n = prompt('Введите натуральную степень n');
+            } else if (n === null) {
+                n = prompt('Вы отменили выбор! Введите натуральную степень n');
+            } else if (n.trim() === '') {
+                n = prompt('Вы ввели пустую строку! Введите натуральную степень n');
+            } else if ( isNaN(Number(n)) ) {
+                n = prompt('Вы ввели не число! Введите натуральную степень n');
+            } else if (!Number.isInteger( Number(n) )) {
+                n = prompt('Вы ввели не целое число! Введите натуральную степень n');
+            } else if (Number(n) <= 0) {
+                n = prompt('Вы ввели не натуральное число! Введите натуральную степень n');
+            } else {
+                break;
+            };
+        };
+
+        for (let i = 1; i < n; i++) {
+            result *= a;
+        };
+        
+        console.log(`${a} в степени ${n} = ${result}`);
+    </script>
+</body>
+</html>

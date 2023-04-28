@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2 dop</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        let epsilon, summand, sum = 0;
+
+        while (true) {
+            if (typeof epsilon === 'undefined') {
+                epsilon = prompt('Введите ε (от 0 до 1)', '0.01');
+            } else if (epsilon === null) {
+                epsilon = prompt('Вы отменили выбор! Введите ε (от 0 до 1)');
+            } else if ( isNaN(Number(epsilon)) ) {
+                epsilon = prompt('Вы ввели не число! Введите ε (от 0 до 1)');
+            } else if (epsilon.trim() === '') {
+                epsilon = prompt('Вы ввели пустую строку! Введите ε (от 0 до 1)');
+            } else if (epsilon >= 1 || epsilon <= 0) {
+                epsilon = prompt('Вы ввели неверное значение! Введите ε (от 0 до 1)');
+            } else {
+                epsilon = Number(epsilon);
+                break;
+            };
+        };
+
+        summand = Math.abs( -1/(1 + (2*1 + 1)) );
+        for (let i = 2; summand > epsilon; i++) {
+            sum += summand;
+            summand = Math.abs( (-1)**i / (i + (2*i + 1)) );
+        };
+        console.log(`Сумма = ${sum.toFixed(3)}`);
+    </script>
+</body>
+
+</html>
