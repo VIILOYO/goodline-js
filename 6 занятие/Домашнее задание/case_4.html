@@ -50,7 +50,7 @@
             };
         };
 
-        do {
+        while (+endDate >= +startDate) {
             if (endDate.getDay() === 5) {
                 console.log(`${endDate.getMonth()+1}.${endDate.getFullYear()}`);
             }
@@ -60,7 +60,7 @@
             } else {
                 endDate = new Date(endDate.getFullYear() - 1, 11, endDate.getDate());
             }
-        } while (+endDate >= +startDate);
+        };
     </script>
 </body>
 </html>
