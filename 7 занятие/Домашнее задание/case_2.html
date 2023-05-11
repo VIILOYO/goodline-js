@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        const array = prompt('Введите массив чисел через пробел', '1 4 7 9 16 35 24 18 11 44').split(' ');
+        let evenArray = [];
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i]%2 === 0) evenArray.push(array[i]);
+        }
+
+        evenArray.length === 0 ? console.log('В массиве нет четных чисел') : console.log(evenArray);
+    </script>
+</body>
+</html>

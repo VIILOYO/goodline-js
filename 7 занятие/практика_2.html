@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика 2</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        let array = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+        ];
+        let min, max, minI, minJ, maxI, maxJ;
+        
+        minI = 0;
+        minJ = 0;
+        maxI = 0;
+        maxJ = 0;
+        min = array[minI][minJ];
+        max = array[maxI][maxJ];
+
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] < min) {
+                    min = array[i][j];
+                    minJ = j;
+                    minI = i;
+                }
+
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                    maxJ = j;
+                    maxI = i;
+                }
+            }
+        }
+        array[minI][minJ] = max;
+        array[maxI][maxJ] = min;
+
+        console.log(array);
+    </script>
+</body>
+</html>

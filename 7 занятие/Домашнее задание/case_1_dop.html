@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1 dop</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        const array = prompt('Введите массив чисел через пробел', '0 5 2 1 1 1 2 2 5 9 8 2 2 1').split(' ');
+        let resultArray = new Map();
+        let numberCount;
+        let maxCount = 0, minNumber;
+
+        for (let i = 0; i < array.length; i++) {
+            if (!resultArray.has(array[i])) {
+                resultArray.set(array[i], 0);
+            } 
+
+            numberCount = resultArray.get(array[i]);
+            resultArray.set(array[i], numberCount+1);
+        }
+
+        for (let result of resultArray) {
+            if(result[1] > maxCount) {
+                maxCount = result[1];
+                minNumber = Number(result[0]);
+            } else if (result[1] === maxCount) {
+                minNumber = result[0] < minNumber ? Number(result[0]) : minNumber;
+            }
+        }
+        console.log(`Число ${minNumber} встретилось ${maxCount} раз`);
+    </script>
+</body>
+</html>
