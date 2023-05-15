@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        // let a;
+        // let array = [];
+        let array = [1, 4, 7, -1, 0, 5, -2, 3];
+        let k = 0;
+
+        // a = prompt("Введите данные массива через 1 пробел");
+        // array = a.split(" ");
+
+        outerloop: for (let i = 0; i < array.length; i++) {
+            for (let j = i+1; j < array.length; j++) {
+                if (array[i] === array[j]) {
+                    k++;
+                    console.log(array[i], array[j], i, j);
+                    console.log("Одинаковые значения:", array[i], array[j]);
+                    break outerloop;
+                }
+            }
+        };
+
+        if (k == 0) {
+            "Code"  
+        };
+
+        for (let i = 1; i < array.length; i++) {
+            // Какой-то код
+            while (lt < rt) {
+                // Ещё какой-то код
+                if (X < array[m]) {
+                    // Код
+                } else {
+                    // Код
+                }
+            }
+            for (let j = i - 1; j >= lt; i--) {
+                // Код
+            }
+            // Код
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -9,7 +9,7 @@
 <body>
     <script>
         'use strict'
-        const array = prompt('Введите массив разных чисел через пробел').split(' ');
+        const array = prompt('Введите массив разных чисел через пробел', '1 4 7 -1 0 5 -2 3').split(' ');
         let validArray = [];
         let flag = false;
         let minIndex = 0;
@@ -46,17 +46,15 @@
                 elementCount = maxIndex - minIndex - 1;
                 if (elementCount > 1) {
                     elementProduct = 1;
-                    for (let i = minIndex; i < maxIndex; i++) {
-                        console.log(elementProduct)
+                    for (let i = minIndex+1; i < maxIndex; i++) {
                         elementProduct *= array[i]; 
                     }
                 }
             } else {
-                console.log(minIndex, maxIndex);
                 elementCount = minIndex - maxIndex - 1;
                 if (elementCount > 1) {
                     elementProduct = 1;
-                    for (let i = maxIndex; i < minIndex; i++) {
+                    for (let i = maxIndex+1; i < minIndex; i++) {
                         elementProduct *= array[i]; 
                     }
                 }
