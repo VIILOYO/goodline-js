@@ -15,6 +15,10 @@
     <script>
         'use strict'
 
+        const R = 0.299;
+        const G = 0.587;
+        const B = 0.114;
+
         let gaussianFilter = [
             [0.000789, 0.006581, 0.013347, 0.006581, 0.000789],
             [0.006581, 0.054901, 0.111345, 0.054901, 0.006581],
@@ -36,10 +40,9 @@
         for (let i = 0; i < image.length; i++) {
             grayscaleImage[i] = [];
             for (let j = 0; j < image[i].length; j++) {
-                // 0.299, 0.587, 0.114 - перевод пикселя в оттенок серого
                 // округление необходимо для исключения случаев, когда в числе без причины
                 // появляется огромное количество нулей
-                grayscaleImage[i].push(Math.floor(image[i][j][0] * 0.299 + image[i][j][1] * 0.587 + image[i][j][2] * 0.114));
+                grayscaleImage[i].push(Math.floor(image[i][j][0] * R + image[i][j][1] * G + image[i][j][2] * B));
             }
         }
 
@@ -65,8 +68,8 @@
             for (let j = 2; j < grayscaleImage[i].length - 2; j++) {
                 gaussianPixel = 0;
                 // Циклы для прохода по фильтру Гауса
-                for (let k = 0; k < 5; k++) {
-                    for (let n = 0; n < 5; n++) {
+                for (let k = 0; k < gaussianFilter.length; k++) {
+                    for (let n = 0; n < gaussianFilter[k].length; n++) {
                         // i - 2 + k - покрывает область 5 значений (аналогично с шириной)
                         // результатом является число - сумма чисел в области 5x5 умноженных 
                         // на соответствующее число в фильтре Гауса
@@ -87,6 +90,7 @@
                     for (let n = 0; n < 3; n++) {
                         // i - 1 + k - покрывает область 3 значений (аналогично с шириной)
                         // результатом является массив чисел из области 3x3 
+                        gaussianImage[i - 1 + k][j - 1 + n] = Number(gaussianImage[i - 1 + k][j - 1 + n]);
                         medianList.push(gaussianImage[i - 1 + k][j - 1 + n]);
                     }
                 }
