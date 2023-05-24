@@ -90,7 +90,6 @@
                     for (let n = 0; n < 3; n++) {
                         // i - 1 + k - покрывает область 3 значений (аналогично с шириной)
                         // результатом является массив чисел из области 3x3 
-                        gaussianImage[i - 1 + k][j - 1 + n] = Number(gaussianImage[i - 1 + k][j - 1 + n]);
                         medianList.push(gaussianImage[i - 1 + k][j - 1 + n]);
                     }
                 }

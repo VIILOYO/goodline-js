@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика 1</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        
+        function calc(a, b, operation)
+        {
+            switch(operation) {
+                case '+':
+                    return a + b;
+                    break;
+                case '-':
+                    return a - b;
+                    break;
+                case '*':
+                    return a * b;
+                    break
+                case '/':
+                    return a/b;
+                    break;
+            }   
+        }
+
+        const a = +prompt('Введите первое число', '10');
+        const operation = prompt('Введите операция', '+');
+        const b = +prompt('Введите второе число', '5');
+
+
+        console.log(calc(a, b, operation));
+    </script>
+</body>
+</html>
