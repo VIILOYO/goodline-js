@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2 dop</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        function isPalindrom(text, start = 0, end = text.length - 1) {
+            let first = start;
+            let last = end;
+            if (text[last] == ' ') {
+                last--;
+            }
+            if (text[first] == ' ') {
+                first++
+            }
+            if (first >= last) {
+                return true;
+            }
+            if (text[first] == text[last]) {
+                return isPalindrom(text, ++first, --last);
+            } else {
+                return false;
+            }
+            
+        }
+
+        let text = prompt('Введите текст без знаков препинания', 'Лег на храм и дивен и невидим архангел').toLocaleLowerCase;
+
+        console.log(isPalindrom(text));
+    </script>
+</body>
+</html>

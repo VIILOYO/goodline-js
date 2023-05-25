@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        function validation(variable) {
+            let message;
+            if (variable === null) {
+                message = 'Вы отменили ввод';
+                flag = false;
+            } else if (isNaN(Number(variable))) {
+                message = 'Вы ввели не число';
+                flag = false;
+            } else if (variable.trim() === '') {
+                message = 'Вы ввели пустую строку';
+                flag = false
+            } else {
+                return Number(variable);
+            };
+            console.log(message);
+        }
+
+        function getEquationRoots(a, b, c)  {
+            let D = b**2 - 4*a*c;
+            if (D > 0) {
+                let x1 = (b - Math.sqrt(D))/(2 * a);
+                let x2 = (b + Math.sqrt(D))/(2 * a);
+                return `x1 = ${x1};  x2 = ${x2}`;
+            } else if (D == 0) {
+                let x1 = b/(2 * a);
+                return `x1 = ${x1}`;
+            } else {
+                return 'Корней нет';
+            }
+        }
+
+        let flag = true;
+        let a = validation(prompt('Введите первый коэффициент a', '2'));
+        flag = a == 0 ? false : flag;
+        let b = validation(prompt('Введите второй коэффициент b', '5'));
+        let c = validation(prompt('Введите третий коэффициент c', '3'));
+
+        if (flag) {
+            console.log(getEquationRoots(a, b, c, flag));
+        } 
+    </script>
+</body>
+
+</html>

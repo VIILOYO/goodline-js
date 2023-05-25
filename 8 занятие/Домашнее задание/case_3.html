@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 3</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        function deleteDoubleSpace(text) {
+            if (text.indexOf('  ') != -1) {
+                text = text.replace('  ', ' ');
+                return deleteDoubleSpace(text);
+            } else {
+                return text;
+            }
+        }
+
+        let string = prompt('Введите строку', 'Индoнeзийcкий   мacтep   фoтoшoпa');
+        console.log(deleteDoubleSpace(string));
+    </script>
+</body>
+</html>

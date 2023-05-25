@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 3 dop</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        function quickSort(array) {
+            if (array.length <= 1) {
+                return array;
+            }
+
+            let pivot = array[0];
+
+            let left = [];
+            let right = [];
+
+            for (var i = 1; i < array.length; i++) {
+                array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+            }
+
+            return quickSort(left).concat(pivot, quickSort(right));
+        };
+
+        let array = prompt('Введите массив значений', '10 5 8 3 -5 0 1').split(' ');
+        for (let i = 0; i < array.length; i++) {
+            array[i] = Number(array[i]);
+        }
+
+        console.log(quickSort(array));
+    </script>
+</body>
+
+</html>
