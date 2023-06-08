@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 2</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        class BankAccount {
+
+            constructor(number, contributor, money, percent) {
+                this.number = number;
+                this.contributor = contributor;
+                this.money = money;
+                this.percent = percent;
+            }
+
+            deposit(cash) {
+                this.money += cash;
+                return this.money;
+            }
+
+            calculation() {
+                this.money *= 1 + this.percent/100;
+                return this.money;
+            }
+        }
+
+        let bankArray = [];
+        let myBankAccount = new BankAccount(2023123415, 'Alexey Babenko', 5000, 5);
+
+        console.log(myBankAccount.deposit(1000));
+        console.log(myBankAccount.calculation());
+
+        for(let attribut in myBankAccount) {
+            bankArray.push(attribut);
+        }
+        
+        console.log(bankArray);
+    </script>
+</body>
+</html>

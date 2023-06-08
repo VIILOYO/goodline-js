@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>case 1</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        class Employee {
+
+            constructor(firstName, lastName, rate, days) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.rate = rate;
+                this.days = days;
+            }
+
+            getSalary() {
+                return this.rate * this.days;
+            }
+
+            toString() {
+                let salary = this.getSalary();
+                return `Имя: ${this.firstName} \nФамилия: ${this.lastName} \nЗарплата: ${salary}`;
+            }
+        }
+
+        let User = new Employee('Alexey', 'Babenko', 500, 21);
+        console.log(User.getSalary());
+        console.log(User.toString());
+    </script>
+</body>
+</html>
